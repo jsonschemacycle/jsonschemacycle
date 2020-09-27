@@ -10,7 +10,7 @@
   "main": "dist/main.js",
   "scripts": {
     "test:unit": "jest",
-    "build": "webpack && minify dist/main.js > dist/main.min.js",
+    "build": "webpack && minify dist/jsonschemacycle.js > dist/jsonschemacycle.min.js",
     "watch": "webpack --watch",
     "test:bench": "webpack tests/bench/ -o bench/index.js && node bench/",
     "deploy": "jest && npm run test:bench && npm run build"
@@ -27,6 +27,7 @@
     "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/plugin-proposal-export-default-from": "^7.10.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "babel-jest": "26.3.0",
     "jest": "26.4.2",
     "webpack-cli": "^3.3.12",
@@ -35,6 +36,7 @@
     "lodash": "^4.17.20",
     "sinon": "^9.0.3",
     "axios": "^0.20.0",
-    "minify": "^6.0.0"
+    "minify": "^6.0.0",
+    "requirejs": "^2.3.6"
   }
 }

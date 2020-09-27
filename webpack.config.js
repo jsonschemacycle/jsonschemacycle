@@ -6,19 +6,30 @@ module.exports = {
     module: {
         rules: [{
             loader: "babel-loader",
-            // Skip any files outside of your project's `src` directory
-            include: [
-                path.resolve(__dirname, "src"),
-            ],
-            // Only run `.js` and `.jsx` files through Babel
+            include: [path.resolve(__dirname, "src")],
+            exclude: [path.resolve(__dirname, "node_modules")],
             test: /\.jsx?$/,
-            // Options to configure babel with
             query: {
-                plugins: ['@babel/plugin-proposal-function-bind', "@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-export-default-from"],
-                presets: ['@babel/preset-env'],
+                plugins: [
+                    '@babel/plugin-proposal-function-bind',
+                    "@babel/plugin-transform-modules-commonjs"
+                ],
+                presets: [
+                    ["@babel/preset-env", {
+                        "modules": "commonjs",
+                        "useBuiltIns": "entry",
+                        "targets": {
+                            "node": "current"
+                        }
+                    }]
+                ],
             }
-        }],
-        noParse: [/benchmark/]
+        }]
     },
-
+    output: {
+        path: __dirname,
+        filename: './dist/jsonschemacycle.js',
+        library: "jsonschemacycle",
+        libraryTarget: "umd"
+    }
 };

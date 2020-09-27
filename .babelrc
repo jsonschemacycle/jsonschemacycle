@@ -1,7 +1,11 @@
 {
   "presets": [
     ["@babel/preset-env", {
-      "useBuiltIns": "entry"
+      "modules": "commonjs",
+      "useBuiltIns": "entry",
+      "targets": {
+        "node": "current"
+      }
     }]
   ],
   "plugins": [
