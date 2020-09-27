@@ -1,0 +1,11 @@
+/src
+/coverage
+/tests
+/bench
+.babelrc
+jest.config.js
+jestSetup.js
+webpack.config.js
+.npmignore
+index.html
+node

@@ -1,0 +1,11 @@
+{
+  "data": {
+    "id": "https://baseurl.com/repo/main.json",
+    "$ref": "Oo",
+    "a field": {
+      "anotherField": {
+        "$ref": "aRef#"
+      }
+    }
+  }
+}
