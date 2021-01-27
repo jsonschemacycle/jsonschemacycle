@@ -5,7 +5,6 @@ A JS library to identify cycles in complex networks of interconnected JSON Schem
 ### Getting Started
 Note: The library is still in alpha. Anyone welcome to participate.
 
-To start using the library simply run: ``npm install jsonschemacycle`` or compile it manually (see below).  
 If your network is not already resolved, you can pass the URL of its entry point to the ``findCycles()``
 function. It will return a promise that you can ``await``.
 ```
